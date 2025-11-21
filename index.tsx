@@ -327,7 +327,7 @@ const HelpModal = ({ onClose }: { onClose: () => void }) => (
             <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>(Скопируйте код из файла README.md)</span><br/><br/>
 
             <span style={{ color: '#666' }}>// 3. Добавьте скрипт в package.json</span><br/>
-            "electron:build": "npm run build && electron-builder"<br/><br/>
+            "electron:build": "npm run build && electron-builder --win"<br/><br/>
 
             <span style={{ color: '#666' }}>// 4. Соберите приложение</span><br/>
             npm run electron:build

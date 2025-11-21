@@ -109,15 +109,15 @@ To package this application as a standalone Windows executable (`.exe`):
    ```
 
 3. **Update `package.json`:**
-   Add the `main` entry and `build` config. Add the `electron:build` script.
+   Add the `main` entry and `build` config. Add the `electron:build` script with the `--win` flag to ensure a Windows build even on Linux.
    ```json
    {
      "main": "electron.js",
      "scripts": {
        "dev": "vite",
-       "build": "tsc && vite build",
+       "build": "vite build",
        "electron:dev": "concurrently \"cross-env BROWSER=none npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
-       "electron:build": "npm run build && electron-builder"
+       "electron:build": "npm run build && electron-builder --win"
      },
      "build": {
        "appId": "com.ma3agent.app",
